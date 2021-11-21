@@ -12,9 +12,12 @@ const db = mysql.createConnection(
         password: process.env.DB_PW,
         database: 'employee_tracker'
     },
-    console.log('Connected to the employee_tracker database.')
+    
 );
 
+db.connect(function (err) {
+    if (err) throw err;
+  });
 
 //export
 module.exports = db;

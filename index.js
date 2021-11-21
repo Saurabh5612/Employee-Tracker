@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const db = require('./db/connection');
-const cTable = require('console.table');
+const cTable = require('console.table')
 
 //import queries from QUERY
 const Query = require("./lib/query")
@@ -15,9 +15,11 @@ const questions = {
             type: "list",
             message: "What would you like to do?",
             name: "action",
-            choices: ["view departments", "view employees", "view roles", "add a department", "add a role", "add an employee", "update an employee", "Exit"],
+            choices: ["view departments", "view employees", "view roles", "add a department", "add a role", "add an employee", "update an employee", "Exit"] ,
             loop: false
         }
+
+     
     ]
 }
 
@@ -51,7 +53,8 @@ function main() {
                 default:
                     process.exit(0);
             }
-        });
+        })
+        .catch( err => console.log(err))
 
 }
 
